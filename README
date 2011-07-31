@@ -1,0 +1,6 @@
+Prototime is an extension to DateTime for .Net intented for making formating easier.
+The way it works is that you give an example of how you want the code formatted, instead of the weird cult of dd MMM HH:mm:ss
+
+
+Prototime is inspired by Stamp for Ruby
+https://github.com/jeremyw/stamp
