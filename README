@@ -1,6 +1,8 @@
 Prototime is an extension to DateTime for .Net intented for making formating easier.
 The way it works is that you give an example of how you want the code formatted, instead of the weird cult of dd MMM HH:mm:ss
 
+So instead of 'd MMM yyyy'  you would write this example '15 Jun 2008' and get a string formatted accordingly.
+
 
 Prototime is inspired by Stamp for Ruby
 https://github.com/jeremyw/stamp
