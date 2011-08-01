@@ -23,7 +23,8 @@ namespace ProtoTime.Tests
 			Assert.AreEqual (_sut.ToString (), result);
 		}
 
-		[Test]
+		[Test()]
+		[Description("Right now we do not take culture into consideration")]
 		public void EachMonth ()
 		{
 			FormatLike_WithMonth_OutputsCorrectMonth (new DateTime (2000, 01, 01), "Jan");
@@ -35,7 +36,7 @@ namespace ProtoTime.Tests
 			FormatLike_WithMonth_OutputsCorrectMonth (new DateTime (2000, 07, 01), "Jul");
 			FormatLike_WithMonth_OutputsCorrectMonth (new DateTime (2000, 08, 01), "Aug");
 			FormatLike_WithMonth_OutputsCorrectMonth (new DateTime (2000, 09, 01), "Sep");
-			FormatLike_WithMonth_OutputsCorrectMonth (new DateTime (2000, 10, 01), "Okt");
+			FormatLike_WithMonth_OutputsCorrectMonth (new DateTime (2000, 10, 01), "Oct");
 			FormatLike_WithMonth_OutputsCorrectMonth (new DateTime (2000, 11, 01), "Nov");
 			FormatLike_WithMonth_OutputsCorrectMonth (new DateTime (2000, 12, 01), "Dec");
 		}
