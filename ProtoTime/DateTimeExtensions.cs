@@ -1,6 +1,8 @@
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Text.RegularExpressions;
+using System.Linq;
 
 namespace ProtoTime
 {
@@ -13,23 +15,29 @@ namespace ProtoTime
 
 		public static string FormatLike (this DateTime dateTime, string example)
 		{
-			var regexForMonth = "^[A-Za-z]{3}$";
-			var regexForMonthAndDayInMonth =  "^[A-Za-z]{3} \\d{2}$";
-			var regexForDayInMonthMonthAndYear =  "^\\d{2} [A-Za-z]{3} \\d{4}$";
+			//var MONTHNAMES_REGEXP      = string.Join("|", DateTimeFormatInfo.CurrentInfo.MonthNames);
+		var real_ABBR_MONTHNAMES_REGEXP = DateTimeFormatInfo.CurrentInfo.AbbreviatedMonthNames.Where(x => x != String.Empty).ToArray();
+    var ABBR_MONTHNAMES_REGEXP = string.Join("|", real_ABBR_MONTHNAMES_REGEXP);
 			
-			if (Regex.Matches(example, regexForMonth).Count > 0) {
-				return dateTime.ToString ("MMM");
-			}
+    //var DAYNAMES_REGEXP        = string.Join("|", DateTimeFormatInfo.CurrentInfo.DayNames);
+    //var ABBR_DAYNAMES_REGEXP   = string.Join("|", DateTimeFormatInfo.CurrentInfo.AbbreviatedDayNames);
 			
-			if (Regex.Matches(example, regexForMonthAndDayInMonth).Count > 0) {
-				return dateTime.ToString ("MMM dd");
-			}
+	//		var ONE_DIGIT_REGEXP = "\\d{1}";
+			var TWO_DIGIT_REGEXP = "\\d{2}";
+			var FOUR_DIGIT_REGEXP = "\\d{4}";
 			
-			if(Regex.Matches(example, regexForDayInMonthMonthAndYear).Count > 0){
-				return dateTime.ToString ("dd MMM yyy");
-			}
+			Regex rgx1 = new Regex(ABBR_MONTHNAMES_REGEXP);
+      		example = rgx1.Replace(example, "MMM");
 			
-			return dateTime.ToString("MMM dd, yyy");
+			Regex rgx3 = new Regex(FOUR_DIGIT_REGEXP);
+      		example = rgx3.Replace(example, "yyy");
+			
+			Regex rgx2 = new Regex(TWO_DIGIT_REGEXP);
+      		example = rgx2.Replace(example, "dd");
+			
+			
+		
+			return dateTime.ToString (example);
 			
 		}
 	}
