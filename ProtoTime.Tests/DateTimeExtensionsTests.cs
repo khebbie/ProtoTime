@@ -12,7 +12,7 @@ namespace ProtoTime.Tests
 		[SetUp]
 		public void BeforeEach ()
 		{
-			var sut = new DateTime (1974, 11, 12);
+			_sut = new DateTime (1974, 11, 12);
 		}
 
 		[Test]
@@ -48,6 +48,14 @@ namespace ProtoTime.Tests
 			Assert.AreEqual (expectedResult, result);
 		}
 		
+		[Test]
+		public void FormatLike_WithMonthAndDayInMonth()
+		{
+			string expectedResult = "Nov 12";
+			string result = _sut.FormatLike ("Apr 01");
+			
+			Assert.AreEqual (expectedResult, result);
+		}
 	}
 }
 

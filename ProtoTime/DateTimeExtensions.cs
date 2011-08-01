@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Text.RegularExpressions;
 
 namespace ProtoTime
 {
@@ -7,15 +8,18 @@ namespace ProtoTime
 	{
 		public static string FormatLike (this DateTime dateTime)
 		{
-			return dateTime.ToString();
+			return dateTime.ToString ();
 		}
-		
+
 		public static string FormatLike (this DateTime dateTime, string example)
 		{
-			var monthIntToMonthName = new Dictionary<int, string>();
+			var regexForMonth = "^[A-Za-z]{3}$";
 			
-			return dateTime.ToString("MMM");
-			   
+			if (Regex.Matches(example, regexForMonth).Count > 0) {
+				return dateTime.ToString ("MMM");
+			}
+			return dateTime.ToString("MMM dd");
+			
 		}
 	}
 }
