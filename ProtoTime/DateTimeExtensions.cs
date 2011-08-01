@@ -15,31 +15,37 @@ namespace ProtoTime
 
 		public static string FormatLike (this DateTime dateTime, string example)
 		{
-			//var MONTHNAMES_REGEXP      = string.Join("|", DateTimeFormatInfo.CurrentInfo.MonthNames);
-		var real_ABBR_MONTHNAMES_REGEXP = DateTimeFormatInfo.CurrentInfo.AbbreviatedMonthNames.Where(x => x != String.Empty).ToArray();
-    var ABBR_MONTHNAMES_REGEXP = string.Join("|", real_ABBR_MONTHNAMES_REGEXP);
+			//Wow so MS left an empty element at the end - can this be true or am I doing something wrong?
+			var real_MonthNames = DateTimeFormatInfo.CurrentInfo.MonthNames.Where (x => x != String.Empty).ToArray ();
+			var MONTHNAMES_REGEXP = string.Join ("|", real_MonthNames);
 			
-    //var DAYNAMES_REGEXP        = string.Join("|", DateTimeFormatInfo.CurrentInfo.DayNames);
-    //var ABBR_DAYNAMES_REGEXP   = string.Join("|", DateTimeFormatInfo.CurrentInfo.AbbreviatedDayNames);
+			var real_AbbreviatedMonthNames = DateTimeFormatInfo.CurrentInfo.AbbreviatedMonthNames.Where (x => x != String.Empty).ToArray ();
+			var ABBR_MONTHNAMES_REGEXP = string.Join ("|", real_AbbreviatedMonthNames);
 			
-	//		var ONE_DIGIT_REGEXP = "\\d{1}";
+			//var DAYNAMES_REGEXP        = string.Join("|", DateTimeFormatInfo.CurrentInfo.DayNames);
+			//var ABBR_DAYNAMES_REGEXP   = string.Join("|", DateTimeFormatInfo.CurrentInfo.AbbreviatedDayNames);
+			
+			var ONE_DIGIT_REGEXP = "\\d{1}";
 			var TWO_DIGIT_REGEXP = "\\d{2}";
 			var FOUR_DIGIT_REGEXP = "\\d{4}";
 			
-			Regex rgx1 = new Regex(ABBR_MONTHNAMES_REGEXP);
-      		example = rgx1.Replace(example, "MMM");
+			example = ReplaceWithRegex (MONTHNAMES_REGEXP, example, "MMMM");
+			example = ReplaceWithRegex (ABBR_MONTHNAMES_REGEXP, example, "MMM");
+			example = ReplaceWithRegex (FOUR_DIGIT_REGEXP, example, "yyy");
+			example = ReplaceWithRegex (TWO_DIGIT_REGEXP, example, "dd");
+			example = ReplaceWithRegex (ONE_DIGIT_REGEXP, example, "d");
 			
-			Regex rgx3 = new Regex(FOUR_DIGIT_REGEXP);
-      		example = rgx3.Replace(example, "yyy");
-			
-			Regex rgx2 = new Regex(TWO_DIGIT_REGEXP);
-      		example = rgx2.Replace(example, "dd");
-			
-			
-		
 			return dateTime.ToString (example);
 			
 		}
+
+		public static string ReplaceWithRegex (string regex, string input, string replacement)
+		{
+			Regex rgx4 = new Regex (regex);
+			var output = rgx4.Replace (input, replacement);
+			return output;
+		}
+		
 	}
 }
 

@@ -67,13 +67,31 @@ namespace ProtoTime.Tests
 		}
 		
 		[Test]
-		public void FormatLike_Danishstyle()
+		public void FormatLike_MonthDayInMonthAndYearOneDayDigit ()
+		{
+			string expectedResult = "Nov 12, 1974";
+			string result = _sut.FormatLike ("Mar 1, 1999");
+			
+			Assert.AreEqual (expectedResult, result);
+		}
+		
+		[Test]
+		public void FormatLike_DanishstyleAbbrMonth()
 		{
 			string expectedResult = "12 Nov 1974";
 			string result = _sut.FormatLike ("01 Mar 1999");
 			
 			Assert.AreEqual (expectedResult, result);
 		}	
+		
+		[Test]
+		public void FormatLike_Danishstyle()
+		{
+			string expectedResult = "12 November 1974";
+			string result = _sut.FormatLike ("01 March 1999");
+			
+			Assert.AreEqual (expectedResult, result);
+		}
 		
 		
 
