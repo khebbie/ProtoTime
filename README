@@ -3,23 +3,7 @@ The way it works is that you give an example of how you want the code formatted,
 
 So instead of 'd MMM yyyy'  you would write this example '15 Jun 2008' and get a string formatted accordingly.
 
-Use these examples...
-        6/15/2008
-        Sunday, June 15, 2008
-        Sunday, June 15, 2008 9:15 PM
-        Sunday, June 15, 2008 9:15:07 PM
-        6/15/2008 9:15 PM
-        6/15/2008 9:15:07 PM
-        June 15
-        2008-06-15T21:15:07.0000000
-        Sun, 15 Jun 2008 21:15:07 GMT
-        2008-06-15T21:15:07
-        9:15 PM
-        9:15:07 PM
-        2008-06-15 21:15:07Z
-        Monday, June 16, 2008 4:15:07 AM
-        June, 2008
-
+     
 
 This is still software in pre-alpha
 
