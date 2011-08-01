@@ -13,13 +13,13 @@ namespace ProtoTime
 			return dateTime.ToString ();
 		}
 
-		public static string FormatLike (this DateTime dateTime, string example)
+		public static string FormatLike (this DateTime dateTime, string exampleFormat)
 		{
 			//Wow so MS left an empty element at the end - can this be true or am I doing something wrong?
-			var MonthNames = RemoveEmptyElements(DateTimeFormatInfo.CurrentInfo.MonthNames);
+			var MonthNames = RemoveEmptyElements (DateTimeFormatInfo.CurrentInfo.MonthNames);
 			var MONTHNAMES_REGEXP = string.Join ("|", MonthNames);
 			
-			var AbbreviatedMonthNames = RemoveEmptyElements(DateTimeFormatInfo.CurrentInfo.AbbreviatedMonthNames);
+			var AbbreviatedMonthNames = RemoveEmptyElements (DateTimeFormatInfo.CurrentInfo.AbbreviatedMonthNames);
 			var ABBR_MONTHNAMES_REGEXP = string.Join ("|", AbbreviatedMonthNames);
 			
 			//var DAYNAMES_REGEXP        = string.Join("|", DateTimeFormatInfo.CurrentInfo.DayNames);
@@ -29,21 +29,21 @@ namespace ProtoTime
 			var TWO_DIGIT_REGEXP = "\\d{2}";
 			var FOUR_DIGIT_REGEXP = "\\d{4}";
 			
-			example = ReplaceWithRegex (MONTHNAMES_REGEXP, example, "MMMM");
-			example = ReplaceWithRegex (ABBR_MONTHNAMES_REGEXP, example, "MMM");
-			example = ReplaceWithRegex (FOUR_DIGIT_REGEXP, example, "yyy");
-			example = ReplaceWithRegex (TWO_DIGIT_REGEXP, example, "dd");
-			example = ReplaceWithRegex (ONE_DIGIT_REGEXP, example, "d");
+			exampleFormat = ReplaceWithRegex (MONTHNAMES_REGEXP, exampleFormat, "MMMM");
+			exampleFormat = ReplaceWithRegex (ABBR_MONTHNAMES_REGEXP, exampleFormat, "MMM");
+			exampleFormat = ReplaceWithRegex (FOUR_DIGIT_REGEXP, exampleFormat, "yyy");
+			exampleFormat = ReplaceWithRegex (TWO_DIGIT_REGEXP, exampleFormat, "dd");
+			exampleFormat = ReplaceWithRegex (ONE_DIGIT_REGEXP, exampleFormat, "d");
 			
-			return dateTime.ToString (example);
+			return dateTime.ToString (exampleFormat);
 			
 		}
-		
-		public static string[] RemoveEmptyElements(string[] input)
-		{	
+
+		public static string[] RemoveEmptyElements (string[] input)
+		{
 			return input.Where (x => x != String.Empty).ToArray ();
-			}
-		
+		}
+
 		public static string ReplaceWithRegex (string regex, string input, string replacement)
 		{
 			Regex rgx4 = new Regex (regex);
