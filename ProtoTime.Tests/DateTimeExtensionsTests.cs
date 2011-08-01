@@ -43,7 +43,7 @@ namespace ProtoTime.Tests
 
 		public void FormatLike_WithMonth_OutputsCorrectMonth (DateTime sut, string expectedResult)
 		{
-			string result = sut.FormatLike ("April");
+			string result = sut.FormatLike ("Apr");
 			
 			Assert.AreEqual (expectedResult, result);
 		}
