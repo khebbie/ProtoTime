@@ -93,8 +93,17 @@ namespace ProtoTime.Tests
 			Assert.AreEqual (expectedResult, result);
 		}
 		
+		[Test]
+		public void FormatLike_DanishstyleWithPunctuation()
+		{
+			string expectedResult = "12. November 1974";
+			string result = _sut.FormatLike ("01. March 1999");
+			
+			Assert.AreEqual (expectedResult, result);
+		}
 		
-
+//coming up:
+//23. juli kl. 9.23
 //date.stamp("Sunday, May 1, 2000")   #=> "Thursday, June  9, 2011"
 //date.stamp("Sun Aug 5")             #=> "Thu Jun  9"
 //date.stamp("12/31/99")

@@ -1,11 +1,24 @@
 Prototime is an extension to DateTime for .Net intented for making formating easier.
-The way it works is that you give an example of how you want the code formatted, instead of the weird cult of dd MMM Hmss
+The way it works is that you give an example of how you want the date formatted, instead of the weird cult of 'dd MMM Hmss'
 
 So instead of 'd MMM yyyy'  you would write this example '15 Jun 2008' and get a string formatted accordingly.
 
      
 
-This is still software in pre-alpha
+This is still software in alpha
 
+Right now the following examples works (probably some combinations of them works as well)
+Jan
+Apr 01
+Mar 01, 1999
+Mar 1, 1999
+01 Mar 1999
+01 March 1999
+01. March 1999
+
+I haven't started working on two digit year and month representation.
+For that to work each should be represented by the highest number valid for it, ie. 31/12/99 would be "December 31. 1999"
+
+I have not started work on timestamps at all...
 Prototime is inspired by Stamp for Ruby
 http://github.com/jeremyw/stamp
