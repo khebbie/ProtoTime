@@ -5,6 +5,7 @@ using ProtoTime;
 namespace ProtoTime.Tests
 {
 	[TestFixture]
+	[SetCulture("en-GB")]
 	public class DateTimeExtensionsTests
 	{
 		DateTime _sut;
