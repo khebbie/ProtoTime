@@ -28,10 +28,28 @@ namespace ProtoTime
 			var ONE_DIGIT_REGEXP = "\\d{1}";
 			var TWO_DIGIT_REGEXP = "\\d{2}";
 			var FOUR_DIGIT_REGEXP = "\\d{4}";
-			
-			exampleFormat = ReplaceWithRegex (MONTHNAMES_REGEXP, exampleFormat, "MMMM");
+
+            exampleFormat = ReplaceWithRegex(FOUR_DIGIT_REGEXP, exampleFormat, "yyy");
+
+		    Match match = Regex.Match(exampleFormat, TWO_DIGIT_REGEXP);
+		    int twoDigits = Int32.Parse(match.Value);
+		    do
+		    {
+                if (twoDigits > 31)
+                    exampleFormat = exampleFormat.Replace(match.Value, "yy");
+                else if (twoDigits < 13)
+                    exampleFormat = exampleFormat.Replace(match.Value, "MM");
+                else if (twoDigits > 12 && twoDigits <= 31)
+                    exampleFormat = exampleFormat.Replace(match.Value, "dd");
+		        
+		        match = match.NextMatch();
+                if(match.Captures.Count > 0)
+                    twoDigits = Int32.Parse(match.Value);
+		    } while (!string.IsNullOrEmpty(match.Value));
+            
+		    exampleFormat = ReplaceWithRegex (MONTHNAMES_REGEXP, exampleFormat, "MMMM");
 			exampleFormat = ReplaceWithRegex (ABBR_MONTHNAMES_REGEXP, exampleFormat, "MMM");
-			exampleFormat = ReplaceWithRegex (FOUR_DIGIT_REGEXP, exampleFormat, "yyy");
+			
 			exampleFormat = ReplaceWithRegex (TWO_DIGIT_REGEXP, exampleFormat, "dd");
 			exampleFormat = ReplaceWithRegex (ONE_DIGIT_REGEXP, exampleFormat, "d");
 			
