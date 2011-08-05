@@ -167,17 +167,17 @@ namespace ProtoTimeSpecs
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("strftime directives just get passed through")]
-        public virtual void StrftimeDirectivesJustGetPassedThrough()
+        [NUnit.Framework.DescriptionAttribute("DateTime directives just get passed through")]
+        public virtual void DateTimeDirectivesJustGetPassedThrough()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("strftime directives just get passed through", ((string[])(null)));
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("DateTime directives just get passed through", ((string[])(null)));
 #line 69
   this.ScenarioSetup(scenarioInfo);
 #line 70
     testRunner.Given("the date December 21, 2012");
 #line 71
-    testRunner.When("I stamp the example \"John Cusack was in a movie about %b %d, %Y, but it wasn\'t ve" +
-                    "ry good.\"");
+    testRunner.When("I stamp the example \"John Cusack was in a movie about  mmm, dd, YYYY, but it wasn" +
+                    "\'t very good.\"");
 #line 72
     testRunner.Then("I produce \"John Cusack was in a movie about Dec 21, 2012, but it wasn\'t very good" +
                     ".\"");
@@ -203,25 +203,6 @@ namespace ProtoTimeSpecs
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Aliases for the stamp method")]
-        [NUnit.Framework.TestCaseAttribute("stamp_like", new string[0])]
-        [NUnit.Framework.TestCaseAttribute("format_like", new string[0])]
-        public virtual void AliasesForTheStampMethod(string alias, string[] exampleTags)
-        {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Aliases for the stamp method", exampleTags);
-#line 79
-  this.ScenarioSetup(scenarioInfo);
-#line 80
-    testRunner.Given("the date December 9, 2011");
-#line 81
-    testRunner.When(string.Format("I call \"{0}\" with \"1999-01-31\"", alias));
-#line 82
-    testRunner.Then("I produce \"2011-12-09\"");
-#line hidden
-            testRunner.CollectScenarioErrors();
-        }
-        
-        [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Examples that aren\'t supported yet")]
         [NUnit.Framework.CategoryAttribute("wip")]
         [NUnit.Framework.TestCaseAttribute("8 am", "1 pm", new string[0])]
@@ -236,13 +217,13 @@ namespace ProtoTimeSpecs
                 @__tags = System.Linq.Enumerable.ToArray(System.Linq.Enumerable.Concat(@__tags, exampleTags));
             }
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Examples that aren\'t supported yet", @__tags);
-#line 90
+#line 80
   this.ScenarioSetup(scenarioInfo);
-#line 91
+#line 81
     testRunner.Given("the time September 8, 2011 at 13:31:27");
-#line 92
+#line 82
     testRunner.When(string.Format("I stamp the example \"{0}\"", example));
-#line 93
+#line 83
     testRunner.Then(string.Format("I produce \"{0}\"", output));
 #line hidden
             testRunner.CollectScenarioErrors();

@@ -66,25 +66,15 @@ Feature: Stamping a date
       | 08:59 AM 1999-12-31             | 01:31 PM 2011-09-08               |
       | Date: Jan 1, 1999 Time: 8:59 am | Date: Sep  8, 2011 Time:  1:31 pm |
 
-  Scenario: strftime directives just get passed through
+  Scenario: DateTime directives just get passed through
     Given the date December 21, 2012
-    When I stamp the example "John Cusack was in a movie about %b %d, %Y, but it wasn't very good."
+    When I stamp the example "John Cusack was in a movie about  mmm, dd, YYYY, but it wasn't very good."
     Then I produce "John Cusack was in a movie about Dec 21, 2012, but it wasn't very good."
 
   Scenario: Plain text just gets passed through
     Given the date June 1, 1926
     When I stamp the example "Marilyn Monroe was born on January 1, 1999."
     Then I produce "Marilyn Monroe was born on June  1, 1926."
-
-  Scenario Outline: Aliases for the stamp method
-    Given the date December 9, 2011
-    When I call "<alias>" with "1999-01-31"
-    Then I produce "2011-12-09"
-
-    Examples:
-      | alias       |
-      | stamp_like  |
-      | format_like |
 
   @wip
   Scenario Outline: Examples that aren't supported yet
