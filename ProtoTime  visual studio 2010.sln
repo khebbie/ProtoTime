@@ -10,6 +10,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProtoTime", "ProtoTime\Prot
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProtoTime.Tests", "ProtoTime.Tests\ProtoTime.Tests.csproj", "{A7E6B736-863D-4223-8D96-E447C2CA2389}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProtoTimeSpecs", "ProtoTimeSpecs\ProtoTimeSpecs.csproj", "{F8026BFA-2C29-472E-B307-5D426E9BF7D1}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -24,6 +26,10 @@ Global
 		{A7E6B736-863D-4223-8D96-E447C2CA2389}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A7E6B736-863D-4223-8D96-E447C2CA2389}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A7E6B736-863D-4223-8D96-E447C2CA2389}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F8026BFA-2C29-472E-B307-5D426E9BF7D1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F8026BFA-2C29-472E-B307-5D426E9BF7D1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F8026BFA-2C29-472E-B307-5D426E9BF7D1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F8026BFA-2C29-472E-B307-5D426E9BF7D1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
