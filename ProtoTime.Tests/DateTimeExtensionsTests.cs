@@ -53,7 +53,7 @@ namespace ProtoTime.Tests
 		public void FormatLike_WithMonthAndDayInMonth ()
 		{
 			string expectedResult = "Nov 12";
-			string result = _sut.FormatLike ("Apr 01");
+			string result = _sut.FormatLike ("Apr 15");
 			
 			Assert.AreEqual (expectedResult, result);
 		}
@@ -62,7 +62,7 @@ namespace ProtoTime.Tests
 		public void FormatLike_MonthDayInMonthAndYear ()
 		{
 			string expectedResult = "Nov 12, 1974";
-			string result = _sut.FormatLike ("Mar 01, 1999");
+			string result = _sut.FormatLike ("Mar 15, 1999");
 			
 			Assert.AreEqual (expectedResult, result);
 		}
@@ -71,7 +71,7 @@ namespace ProtoTime.Tests
 		public void FormatLike_MonthDayInMonthAndYearOneDayDigit ()
 		{
 			string expectedResult = "Nov 12, 1974";
-			string result = _sut.FormatLike ("Mar 1, 1999");
+			string result = _sut.FormatLike ("Mar 15, 1999");
 			
 			Assert.AreEqual (expectedResult, result);
 		}
@@ -80,7 +80,7 @@ namespace ProtoTime.Tests
 		public void FormatLike_DanishstyleAbbrMonth()
 		{
 			string expectedResult = "12 Nov 1974";
-			string result = _sut.FormatLike ("01 Mar 1999");
+			string result = _sut.FormatLike ("15 Mar 1999");
 			
 			Assert.AreEqual (expectedResult, result);
 		}	
@@ -89,7 +89,7 @@ namespace ProtoTime.Tests
 		public void FormatLike_Danishstyle()
 		{
 			string expectedResult = "12 November 1974";
-			string result = _sut.FormatLike ("01 March 1999");
+			string result = _sut.FormatLike ("15 March 1999");
 			
 			Assert.AreEqual (expectedResult, result);
 		}
@@ -98,7 +98,7 @@ namespace ProtoTime.Tests
 		public void FormatLike_DanishstyleWithPunctuation()
 		{
 			string expectedResult = "12. November 1974";
-			string result = _sut.FormatLike ("01. March 1999");
+			string result = _sut.FormatLike ("15. March 1999");
 			
 			Assert.AreEqual (expectedResult, result);
 		}

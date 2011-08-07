@@ -10,12 +10,18 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		README = README
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProtoTime.Specs", "ProtoTime.Specs\ProtoTime.Specs.csproj", "{5F2C0F4F-8244-431E-945C-1AA49C7437AE}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5F2C0F4F-8244-431E-945C-1AA49C7437AE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5F2C0F4F-8244-431E-945C-1AA49C7437AE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5F2C0F4F-8244-431E-945C-1AA49C7437AE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5F2C0F4F-8244-431E-945C-1AA49C7437AE}.Release|Any CPU.Build.0 = Release|Any CPU
 		{8A340C3D-1782-47AF-AF89-CB9DFA1868E0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{8A340C3D-1782-47AF-AF89-CB9DFA1868E0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8A340C3D-1782-47AF-AF89-CB9DFA1868E0}.Release|Any CPU.ActiveCfg = Release|Any CPU
