@@ -18,8 +18,8 @@ namespace ProtoTimeSpecs
     [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "1.7.0.0")]
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     [NUnit.Framework.TestFixtureAttribute()]
-    [NUnit.Framework.DescriptionAttribute("In order to format dates in a more programmer-friendly way\r\nthe FormatLike\r\nforma" +
-        "ts a date given a human-readable example.")]
+    [NUnit.Framework.DescriptionAttribute("In order to format dates in a more programmer-friendly way\nthe FormatLike\nformats" +
+        " a date given a human-readable example.")]
     public partial class StampingADateFeature
     {
         
@@ -32,8 +32,8 @@ namespace ProtoTimeSpecs
         public virtual void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
-            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Stamping a date", "In order to format dates in a more programmer-friendly way\r\nthe FormatLike\r\nforma" +
-                    "ts a date given a human-readable example.", ProgrammingLanguage.CSharp, ((string[])(null)));
+            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "Stamping a date", "In order to format dates in a more programmer-friendly way\nthe FormatLike\nformats" +
+                    " a date given a human-readable example.", ProgrammingLanguage.CSharp, ((string[])(null)));
             testRunner.OnFeatureStart(featureInfo);
         }
         
@@ -70,16 +70,16 @@ namespace ProtoTimeSpecs
         [NUnit.Framework.CategoryAttribute("date")]
         [NUnit.Framework.TestCaseAttribute("January", "September", new string[0])]
         [NUnit.Framework.TestCaseAttribute("Jan", "Sep", new string[0])]
-        [NUnit.Framework.TestCaseAttribute("Jan 1", "Sep  8", new string[0])]
+        [NUnit.Framework.TestCaseAttribute("Jan 1", "Sep 8", new string[0])]
         [NUnit.Framework.TestCaseAttribute("Jan 31", "Sep 08", new string[0])]
         [NUnit.Framework.TestCaseAttribute("Jan 31", "Sep 08", new string[0])]
-        [NUnit.Framework.TestCaseAttribute("Jan 1, 1999", "Sep  8, 2011", new string[0])]
+        [NUnit.Framework.TestCaseAttribute("Jan 1, 1999", "Sep 8, 2011", new string[0])]
         [NUnit.Framework.TestCaseAttribute("Monday", "Thursday", new string[0])]
-        [NUnit.Framework.TestCaseAttribute("Tue, Jan 1", "Thu, Sep  8", new string[0])]
-        [NUnit.Framework.TestCaseAttribute("Tuesday, January 1, 1999", "Thursday, September  8, 2011", new string[0])]
-        [NUnit.Framework.TestCaseAttribute("31/1999", "09/2011", new string[0])]
+        [NUnit.Framework.TestCaseAttribute("Tue, Jan 1", "Thu, Sep 8", new string[0])]
+        [NUnit.Framework.TestCaseAttribute("Tuesday, January 1, 1999", "Thursday, September 8, 2011", new string[0])]
+        [NUnit.Framework.TestCaseAttribute("01/1999", "09/2011", new string[0])]
         [NUnit.Framework.TestCaseAttribute("01/31", "09/08", new string[0])]
-        [NUnit.Framework.TestCaseAttribute("01/99", "09/11", new string[0])]
+        [NUnit.Framework.TestCaseAttribute("12/99", "09/11", new string[0])]
         [NUnit.Framework.TestCaseAttribute("01/31/1999", "09/08/2011", new string[0])]
         [NUnit.Framework.TestCaseAttribute("12/31/99", "09/08/11", new string[0])]
         [NUnit.Framework.TestCaseAttribute("31/12", "08/09", new string[0])]
